@@ -6,10 +6,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "raw.githubusercontent.com",
         port: "",
-        pathname: "/**",
+        pathname: "**",
       },
     ],
   },
 };
 
-export default nextConfig;
+module.exports = nextConfig;
