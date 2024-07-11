@@ -5,6 +5,7 @@ import html from "remark-html";
 import { CardPost } from "@/components/CardPost";
 import db from "../../../../prisma/db";
 import { redirect } from "next/navigation";
+import { CommentList } from "@/components/CommentList";
 
 async function getPostsBySlug(slug) {
   try {
@@ -14,11 +15,16 @@ async function getPostsBySlug(slug) {
       },
       include: {
         author: true,
+        comments: {
+            include: {
+              author: true
+            }
+        }
       },
     });
 
-    if(!post){
-      throw new Error(`Post com o slug ${slug} não encontrado`)
+    if (!post) {
+      throw new Error(`Post com o slug ${slug} não encontrado`);
     }
 
     const processedContent = await remark().use(html).process(post.markdown);
@@ -28,9 +34,9 @@ async function getPostsBySlug(slug) {
 
     return post;
   } catch (error) {
-    logger.error("Falha ao obter o post com o slug: ", slug, error)
+    logger.error("Falha ao obter o post com o slug: ", slug, error);
   }
-  redirect('/not-found')
+  redirect("/not-found");
 }
 
 const PagePost = async ({ params }) => {
@@ -40,10 +46,12 @@ const PagePost = async ({ params }) => {
     <div>
       <CardPost post={post} highlight={true} />
       <h3 className={styles.subtitle}>Código:</h3>
-      <div
-        className={styles.code}
-        dangerouslySetInnerHTML={{ __html: post.markdown }}
-      />
+      <div className={styles.code}>
+        <div dangerouslySetInnerHTML={{ __html: post.markdown }} />
+      </div>
+     
+      <CommentList comments={post.comments}/>
+      
     </div>
   );
 };
