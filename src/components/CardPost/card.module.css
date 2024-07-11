@@ -44,12 +44,31 @@
 
 .footer {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   margin-right: 15px;
   margin-top: auto;
+  padding: 20px;
+}
+
+.footer p {
+  margin: 0;
+  color: #888;
+  font-size: 15px;
+  text-align: center;
 }
 
 .link {
   text-decoration: none;
   cursor: pointer;
+  color: chartreuse;
+}
+
+.actions {
+  display: flex;
+}
+
+.likesComment{
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
 }
