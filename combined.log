@@ -445,3 +445,13 @@
 {"error":{"clientVersion":"5.16.2","name":"PrismaClientValidationError"},"level":"error","message":"Falha ao obter posts"}
 {"error":{"clientVersion":"5.16.2","name":"PrismaClientValidationError"},"level":"error","message":"Falha ao obter posts"}
 {"error":{"clientVersion":"5.16.2","name":"PrismaClientValidationError"},"level":"error","message":"Falha ao obter posts"}
+{"level":"error","message":"Falha ao obter o post com o slug: "}
+{"level":"error","message":"Falha ao obter o post com o slug: "}
+{"level":"error","message":"Falha ao obter o post com o slug: "}
+{"level":"error","message":"Falha ao obter o post com o slug: "}
+{"level":"error","message":"Falha ao obter o post com o slug: "}
+{"level":"error","message":"Falha ao obter o post com o slug: "}
+{"level":"error","message":"Falha ao obter o post com o slug: "}
+{"level":"error","message":"Falha ao obter o post com o slug: "}
+{"level":"error","message":"Falha ao obter o post com o slug: "}
+{"level":"error","message":"Falha ao obter o post com o slug: "}
