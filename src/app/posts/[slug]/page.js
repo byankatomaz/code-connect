@@ -17,7 +17,15 @@ async function getPostsBySlug(slug) {
         author: true,
         comments: {
             include: {
-              author: true
+              author: true,
+              children: {
+                include: {
+                  author: true,
+                },
+              },
+            },
+            where: {
+              parentId: null
             }
         }
       },
