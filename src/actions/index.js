@@ -63,5 +63,6 @@ export async function postReply(parent, formData){
         }
     })
     
+    revalidatePath('/')
     revalidatePath(`/${post.slug}`)
 }
